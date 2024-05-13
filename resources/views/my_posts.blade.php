@@ -29,7 +29,7 @@
                     @foreach($myposts as $mypost)
                         <div class="my-4 border rounded-md p-4">
                             <div class="flex justify-between items-center">
-                                <h2 class="text-lg font-bold">{{ $mypost->title }}</h2>
+                            <h2 class="text-lg font-bold" style="font-size: 2rem;font-weight:bold;">{{ $mypost->title }}</h2>
                                 <div class="flex">
                                     <!-- Update button -->
                                     <a href="{{ route('articles.edit', $mypost->id) }}" class="mx-2 text-blue-500 hover:text-blue-700">

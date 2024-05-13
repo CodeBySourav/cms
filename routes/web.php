@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $allposts = Article::all();
+    $allposts = Article::latest()->get();
     return view('welcome', compact('allposts'));
 });
  
@@ -27,7 +27,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/my_posts', function () { 
         $useremail = Auth()->user()->email;
-        $myposts = Article::where('email', $useremail)->get();
+        $myposts = Article::where('email', $useremail)->latest()->get();
         return view('my_posts', compact('myposts'));
     });
         
