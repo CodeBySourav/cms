@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CMS Project - Laravel</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -31,5 +31,28 @@
                 </div>
             @endif
 
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="m-6 p-6 bg-white border-b border-gray-200">
+
+                    <center><h1 class="text-lg font-bold mb-4" style="font-size: 22px;font-weight: bold; ">All Article Posts</h1></center>
+                     
+                    @foreach($allposts as $allpost)
+                        <div class="my-4 border rounded-md p-4">
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-lg font-bold" style="font-size: 2rem;font-weight:bold;">{{ $allpost->title }}</h2>
+                                 
+                            </div>
+                            <p class="mt-2">{{ $allpost->content }}</p>
+                            <p class="text-sm text-gray-600 mt-2" style="float: inline-end;">Written By {{ $allpost->author_name }}</p>
+                        <br>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
 </html>

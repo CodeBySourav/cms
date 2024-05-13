@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $allposts = Article::all();
+    return view('welcome', compact('allposts'));
 });
  
 
